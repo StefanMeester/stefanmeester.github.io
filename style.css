@@ -19,6 +19,14 @@ nav {
     top: 0;
 }
 
+.logo-img {
+    height: 40px; /* kleiner logo */
+    max-width: 150px; /* voorkomt dat het te breed wordt */
+    width: auto;
+    cursor: pointer;
+}
+
+
 nav .logo {
     font-weight: bold;
     font-size: 1.2rem;
