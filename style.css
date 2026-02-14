@@ -1,179 +1,259 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #0a0a0a;
-    color: #fff;
-    font-family: Arial, sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-/* NAVIGATION */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background: #000;
+    padding: 18px 60px;
+    background: rgba(0, 0, 0, 0.95);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0;
+    gap: 30px;
 }
 
 nav a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-    color: #888;
+    opacity: 0.6;
 }
 
-/* LOGO */
+/* Logo */
+
 .logo-link {
     display: flex;
     align-items: center;
 }
 
 .logo-img {
-    height: 40px;      /* past mooi in nav */
-    max-width: 150px;  /* voorkomt uitrekken */
+    height: 40px;
     width: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
+    filter: brightness(1.2);
 }
 
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    height: 80vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #111;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .hero p {
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 1.2rem;
     color: #aaa;
 }
 
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
-    padding: 80px 10%;
+    padding: 100px 12%;
 }
 
 .section h2 {
-    margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+/* =========================
+   VIDEO PROJECTS
+========================= */
+
+.project {
+    margin-bottom: 80px;
 }
 
 .project iframe {
     width: 100%;
-    height: 500px;
-    margin-bottom: 15px;
+    height: 550px;
+    border: none;
+    transition: transform 0.4s ease;
 }
+
+.project iframe:hover {
+    transform: scale(1.02);
+}
+
+.project h3 {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.project p {
+    margin-top: 10px;
+    color: #bbb;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .gallery img {
     width: 100%;
     display: block;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #000;
-    color: #666;
-}
-
-/* Hover effect voor projecten/foto's */
-.project iframe, .gallery img {
-    transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.project iframe:hover, .gallery img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
+.gallery img:hover {
+    transform: scale(1.04);
+    filter: brightness(1.15);
 }
 
-/* Grid albums */
+/* =========================
+   ALBUM GRID
+========================= */
+
 .albums {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .albums img {
     width: 100%;
     display: block;
-    border-radius: 4px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .albums img:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
-/* Basis font */
-body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    font-size: 16px; /* basis desktop */
-    line-height: 1.6;
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #000;
+    color: #666;
+    font-size: 0.9rem;
 }
 
-/* Hero */
-.hero h1 {
-    font-size: 4rem;
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media screen and (max-width: 1024px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .project iframe {
+        height: 400px;
+    }
+
+    .section {
+        padding: 80px 8%;
+    }
 }
 
-.hero p {
-    font-size: 1.2rem;
-}
-
-/* Responsive aanpassing */
 @media screen and (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     body {
-        font-size: 18px; /* iets groter op mobiel */
+        font-size: 18px;
+    }
+
+    .hero {
+        height: 75vh;
     }
 
     .hero h1 {
-        font-size: 2.5rem; /* past op klein scherm */
+        font-size: 2.2rem;
     }
 
     .hero p {
         font-size: 1rem;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        font-size: 1rem; /* menu items groter op mobiel */
+    .section {
+        padding: 70px 6%;
+    }
+
+    .project iframe {
+        height: 250px;
+    }
+
+    .section h2 {
+        font-size: 1.6rem;
     }
 }
+
