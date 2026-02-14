@@ -231,3 +231,11 @@ footer {
     background: #fff;
     color: #000;
 }
+.featured-card {
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+}
+
