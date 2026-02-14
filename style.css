@@ -31,6 +31,10 @@ img {
     max-width: 100%;
     display: block;
 }
+section {
+    padding: 80px 5%;
+}
+
 
 /* ===============================
    CONTAINER
