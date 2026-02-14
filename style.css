@@ -26,6 +26,16 @@ nav {
     cursor: pointer;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* belangrijk voor vertical alignment */
+    padding: 15px 40px; /* verklein padding zodat nav niet te groot is */
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
 nav .logo {
     font-weight: bold;
