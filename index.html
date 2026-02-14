@@ -4,42 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stefan Meester | AV-Specialist</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #0a0a0a;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        header {
-            padding: 100px 20px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #aaa;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Stefan Meester</h1>
-    <p>AV-Specialist | Video & Fotografie</p>
+<nav>
+    <div class="logo">Stefan Meester</div>
+    <ul>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#fotografie">Fotografie</a></li>
+        <li><a href="#over">Over mij</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>AV-Specialist</h1>
+    <p>Video • Editing • Fotografie</p>
 </header>
+
+<section id="video" class="section">
+    <h2>Video Projecten</h2>
+
+    <div class="project">
+        <iframe src="https://www.youtube.com/embed/YOUTUBE_ID_HIER" allowfullscreen></iframe>
+        <h3>Project Titel</h3>
+        <p>Korte beschrijving van je rol en wat je hebt gedaan.</p>
+    </div>
+
+</section>
+
+<section id="fotografie" class="section">
+    <h2>Fotografie</h2>
+
+    <div class="gallery">
+        <img src="https://via.placeholder.com/600x400" alt="Foto 1">
+        <img src="https://via.placeholder.com/600x400" alt="Foto 2">
+        <img src="https://via.placeholder.com/600x400" alt="Foto 3">
+    </div>
+
+</section>
+
+<section id="over" class="section">
+    <h2>Over mij</h2>
+    <p>
+        Mijn naam is Stefan Meester en ik ben AV-specialist in opleiding.
+        Ik richt mij op video productie, editing en fotografie.
+    </p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: jouwmail@email.com</p>
+</section>
 
 <footer>
     <p>© 2026 Stefan Meester</p>
