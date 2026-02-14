@@ -140,13 +140,40 @@ footer {
     filter: brightness(1.2);
 }
 
+/* Basis font */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 16px; /* basis desktop */
+    line-height: 1.6;
+}
+
+/* Hero */
+.hero h1 {
+    font-size: 4rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Responsive aanpassing */
 @media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
+    body {
+        font-size: 18px; /* iets groter op mobiel */
     }
+
+    .hero h1 {
+        font-size: 2.5rem; /* past op klein scherm */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
+        font-size: 1rem; /* menu items groter op mobiel */
     }
 }
