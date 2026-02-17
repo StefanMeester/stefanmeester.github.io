@@ -291,13 +291,14 @@ footer {
         column-count: 1;
     }
 }
-/* ===============================
-   LIGHTBOX
-================================= */
+/* LIGHTBOX FIXED VERSION */
 
 .lightbox {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.95);
     display: flex;
     align-items: center;
@@ -317,14 +318,14 @@ footer {
     max-width: 90%;
     max-height: 85%;
     border-radius: 8px;
-    animation: fadeIn 0.3s ease;
 }
 
 .close-btn {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 20px;
+    right: 30px;
     font-size: 40px;
+    color: white;
     cursor: pointer;
 }
 
@@ -333,17 +334,19 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
+    color: white;
     cursor: pointer;
     user-select: none;
 }
 
 .prev {
-    left: 40px;
+    left: 30px;
 }
 
 .next {
-    right: 40px;
+    right: 30px;
 }
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.96); }
