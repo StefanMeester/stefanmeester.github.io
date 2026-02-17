@@ -90,12 +90,6 @@ closeBtn.addEventListener("click", () => {
     lightbox.classList.remove("active");
 });
 
-lightbox.addEventListener("click", (e) => {
-    if(e.target === lightbox) {
-        lightbox.classList.remove("active");
-    }
-});
-
 prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage(currentIndex);
