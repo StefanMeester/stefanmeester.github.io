@@ -291,44 +291,61 @@ footer {
         column-count: 1;
     }
 }
-/* LIGHTBOX FIXED VERSION */
+/* ============================= */
+/* LIGHTBOX PRO VERSION */
+/* ============================= */
 
 .lightbox {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
+    inset: 0;
+    background: rgba(0,0,0,0);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 9999;
+    pointer-events: none;
+    transition: background 0.4s ease, opacity 0.4s ease;
+    z-index: 2000;
 }
 
 .lightbox.active {
+    background: rgba(0,0,0,0.92);
     opacity: 1;
-    visibility: visible;
+    pointer-events: auto;
 }
 
+/* Zoom animatie */
 .lightbox-img {
-    max-width: 90%;
-    max-height: 85%;
-    border-radius: 8px;
+    max-width: 92%;
+    max-height: 88%;
+    border-radius: 14px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
+.lightbox.active .lightbox-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Sluit knop */
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
+    top: 25px;
+    right: 35px;
+    font-size: 38px;
     color: white;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 0.8;
+}
+
+/* Navigatie knoppen */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -336,7 +353,14 @@ footer {
     font-size: 50px;
     color: white;
     cursor: pointer;
+    padding: 20px;
     user-select: none;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-50%) scale(1.15);
+    opacity: 0.8;
 }
 
 .prev {
@@ -346,6 +370,7 @@ footer {
 .next {
     right: 30px;
 }
+
 
 
 @keyframes fadeIn {
