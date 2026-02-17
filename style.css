@@ -282,37 +282,3 @@ footer {
 .next {
     right: 30px;
 }
-/* ===============================
-   LIGHTBOX MOBILE OPTIMIZED
-================================= */
-@media (max-width: 600px) {
-
-    /* Nav knoppen kleiner en beter raakbaar */
-    .nav-btn {
-        font-size: 45px;          /* iets kleiner voor mobiel */
-        padding: 20px;            /* touch area groter */
-        min-width: 50px;
-        min-height: 50px;
-    }
-
-    .prev {
-        left: 10px;               /* dichtbij rand voor aanraking */
-    }
-
-    .next {
-        right: 10px;              /* dichtbij rand voor aanraking */
-    }
-
-    .close-btn {
-        top: 15px;
-        right: 15px;
-        font-size: 34px;
-        padding: 10px;
-    }
-
-    .lightbox-img {
-        max-width: 95%;           /* meer ruimte voor foto */
-        max-height: 90%;
-    }
-}
-
