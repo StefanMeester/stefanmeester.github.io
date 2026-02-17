@@ -64,6 +64,9 @@
 </footer>
 
 <script>
+/* ===================== */
+/* LIGHTBOX PRO SCRIPT   */
+/* ===================== */
 
 const images = document.querySelectorAll(".masonry-item img");
 const lightbox = document.getElementById("lightbox");
@@ -86,14 +89,17 @@ function closeLightbox() {
     lightbox.classList.remove("active");
 }
 
+/* Open lightbox bij klikken */
 images.forEach((img, index) => {
     img.addEventListener("click", () => {
         showImage(index);
     });
 });
 
+/* Sluit knop */
 closeBtn.addEventListener("click", closeLightbox);
 
+/* Pijltjes */
 prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage(currentIndex);
@@ -104,7 +110,7 @@ nextBtn.addEventListener("click", () => {
     showImage(currentIndex);
 });
 
-/* Keyboard */
+/* Keyboard support */
 document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("active")) return;
 
@@ -113,10 +119,7 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") prevBtn.click();
 });
 
-/* ===================== */
-/* SWIPE SUPPORT MOBILE */
-/* ===================== */
-
+/* Swipe support mobiel */
 lightbox.addEventListener("touchstart", (e) => {
     startX = e.changedTouches[0].screenX;
 });
@@ -138,7 +141,18 @@ function handleSwipe() {
     }
 }
 
+/* Fade-in masonry items */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.1 });
 
+document.querySelectorAll(".masonry-item").forEach(item => {
+    observer.observe(item);
+});
 </script>
 
 </body>
