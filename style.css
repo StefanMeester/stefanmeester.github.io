@@ -280,4 +280,15 @@ footer {
     transform: scale(1.05);
     opacity: 0.9;
 }
+@media (max-width: 1024px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+}
 
