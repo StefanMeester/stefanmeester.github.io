@@ -282,3 +282,17 @@ footer {
 .next {
     right: 30px;
 }
+@media (max-width: 600px) {
+    .nav-btn {
+        font-size: 40px; /* iets kleiner voor mobiel */
+        padding: 15px;
+    }
+
+    .prev {
+        left: 10px; /* dichter bij rand, touch bereikbaar */
+    }
+
+    .next {
+        right: 10px; /* dichter bij rand, touch bereikbaar */
+    }
+}
