@@ -1,5 +1,5 @@
 /* ===============================
-   RESET
+   RESET & BASIS
 ================================= */
 * {
     margin: 0;
@@ -7,9 +7,6 @@
     box-sizing: border-box;
 }
 
-/* ===============================
-   BASIS
-================================= */
 html {
     font-size: 100%;
 }
@@ -31,10 +28,10 @@ img {
     max-width: 100%;
     display: block;
 }
+
 section {
     padding: 80px 5%;
 }
-
 
 /* ===============================
    CONTAINER
@@ -83,6 +80,7 @@ nav a:hover {
     height: 45px;
     width: auto;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .logo-img:hover {
@@ -92,118 +90,6 @@ nav a:hover {
 /* ===============================
    HERO
 ================================= */
-.hero {
-    padding: 100px 5%;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #aaa;
-}
-
-/* ===============================
-   GRID (PROJECTEN / FOTO'S)
-================================= */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 80px 5%;
-}
-
-.card {
-    overflow: hidden;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-}
-
-.card img {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.card:hover img {
-    transform: scale(1.08);
-    opacity: 0.85;
-}
-
-.card-title {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-}
-
-/* ===============================
-   BUTTONS
-================================= */
-button {
-    background: none;
-    border: 1px solid #444;
-    color: #fff;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background: #fff;
-    color: #000;
-}
-
-/* ===============================
-   FOOTER
-================================= */
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: #777;
-    font-size: 0.9rem;
-}
-
-/* ===============================
-   RESPONSIVE
-================================= */
-@media (max-width: 768px) {
-
-    body {
-        font-size: 1.1rem;
-    }
-
-    nav {
-        padding: 15px 5%;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    .hero {
-        padding: 70px 5%;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .grid {
-        padding: 50px 5%;
-        gap: 20px;
-    }
-
-}
 .hero {
     padding: 140px 5%;
     text-align: center;
@@ -220,28 +106,36 @@ footer {
     margin-bottom: 40px;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 14px 28px;
+/* ===============================
+   BUTTONS / CTA
+================================= */
+button, .cta-button {
+    background: none;
     border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.cta-button:hover {
+button:hover, .cta-button:hover {
     background: #fff;
     color: #000;
 }
-.featured-card {
-    transition: transform 0.3s ease;
-}
 
-.featured-card:hover {
-    transform: translateY(-5px);
-}
 /* ===============================
-   ALBUM / MASONRY GRID
+   FOOTER
 ================================= */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+    font-size: 0.9rem;
+}
 
+/* ===============================
+   MASONRY GRID / ALBUM
+================================= */
 .album {
     padding: 100px 5%;
 }
@@ -256,7 +150,6 @@ footer {
     margin-bottom: 60px;
 }
 
-/* Masonry layout */
 .masonry-grid {
     column-count: 3;
     column-gap: 25px;
@@ -268,18 +161,32 @@ footer {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+
+    /* Fade-in animatie */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.masonry-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .masonry-item img {
     width: 100%;
     display: block;
     transition: transform 0.4s ease, opacity 0.4s ease;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .masonry-item:hover img {
     transform: scale(1.05);
     opacity: 0.9;
 }
+
+/* Responsive masonry */
 @media (max-width: 1024px) {
     .masonry-grid {
         column-count: 2;
@@ -290,11 +197,16 @@ footer {
     .masonry-grid {
         column-count: 1;
     }
+    /* Foto’s altijd zichtbaar op mobiel */
+    .masonry-item {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
 }
-/* ============================= */
-/* LIGHTBOX PRO VERSION */
-/* ============================= */
 
+/* ===============================
+   LIGHTBOX PRO
+================================= */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -314,7 +226,7 @@ footer {
     pointer-events: auto;
 }
 
-/* Zoom animatie */
+/* Zoom-in animatie */
 .lightbox-img {
     max-width: 92%;
     max-height: 88%;
@@ -329,7 +241,7 @@ footer {
     opacity: 1;
 }
 
-/* Sluit knop */
+/* Close knop */
 .close-btn {
     position: absolute;
     top: 25px;
@@ -345,7 +257,7 @@ footer {
     opacity: 0.8;
 }
 
-/* Navigatie knoppen */
+/* Nav knoppen */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -370,21 +282,3 @@ footer {
 .next {
     right: 30px;
 }
-
-
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-}
-.masonry-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.masonry-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
